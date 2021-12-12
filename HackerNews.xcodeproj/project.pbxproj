@@ -14,6 +14,7 @@
 		C5D4E0D22765725900A280A4 /* HNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0D12765725900A280A4 /* HNTabBarController.swift */; };
 		C5D4E0D42765748300A280A4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0D32765748300A280A4 /* HomeVC.swift */; };
 		C5D4E0D6276574B600A280A4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0D5276574B600A280A4 /* SettingsVC.swift */; };
+		C5D4E0D82765918100A280A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0D72765918000A280A4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C5D4E0D12765725900A280A4 /* HNTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNTabBarController.swift; sourceTree = "<group>"; };
 		C5D4E0D32765748300A280A4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		C5D4E0D5276574B600A280A4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		C5D4E0D72765918000A280A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		C5D4E0BC27656D5700A280A4 /* HackerNews */ = {
 			isa = PBXGroup;
 			children = (
+				C5D4E0D72765918000A280A4 /* Constants.swift */,
 				C5D4E0BD27656D5700A280A4 /* AppDelegate.swift */,
 				C5D4E0BF27656D5700A280A4 /* SceneDelegate.swift */,
 				C5D4E0D12765725900A280A4 /* HNTabBarController.swift */,
@@ -145,6 +148,7 @@
 				C5D4E0BE27656D5700A280A4 /* AppDelegate.swift in Sources */,
 				C5D4E0C027656D5700A280A4 /* SceneDelegate.swift in Sources */,
 				C5D4E0D6276574B600A280A4 /* SettingsVC.swift in Sources */,
+				C5D4E0D82765918100A280A4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

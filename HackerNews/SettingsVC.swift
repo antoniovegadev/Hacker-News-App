@@ -20,4 +20,5 @@ class SettingsVC: UIViewController {
 
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
 }

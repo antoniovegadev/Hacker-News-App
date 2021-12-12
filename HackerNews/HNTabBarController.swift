@@ -33,4 +33,5 @@ class HNTabBarController: UITabBarController {
 
         return UINavigationController(rootViewController: settingsVC)
     }
+    
 }
