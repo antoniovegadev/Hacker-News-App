@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		C5D4E0BE27656D5700A280A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0BD27656D5700A280A4 /* AppDelegate.swift */; };
 		C5D4E0C027656D5700A280A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0BF27656D5700A280A4 /* SceneDelegate.swift */; };
-		C5D4E0C227656D5700A280A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0C127656D5700A280A4 /* ViewController.swift */; };
-		C5D4E0C527656D5700A280A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D4E0C327656D5700A280A4 /* Main.storyboard */; };
 		C5D4E0C727656D5900A280A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D4E0C627656D5900A280A4 /* Assets.xcassets */; };
 		C5D4E0CA27656D5900A280A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D4E0C827656D5900A280A4 /* LaunchScreen.storyboard */; };
+		C5D4E0D22765725900A280A4 /* HNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0D12765725900A280A4 /* HNTabBarController.swift */; };
+		C5D4E0D42765748300A280A4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0D32765748300A280A4 /* HomeVC.swift */; };
+		C5D4E0D6276574B600A280A4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0D5276574B600A280A4 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C5D4E0BA27656D5700A280A4 /* HackerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D4E0BD27656D5700A280A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5D4E0BF27656D5700A280A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C5D4E0C127656D5700A280A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C5D4E0C427656D5700A280A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5D4E0C627656D5900A280A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5D4E0C927656D5900A280A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5D4E0CB27656D5900A280A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5D4E0D12765725900A280A4 /* HNTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNTabBarController.swift; sourceTree = "<group>"; };
+		C5D4E0D32765748300A280A4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C5D4E0D5276574B600A280A4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				C5D4E0BD27656D5700A280A4 /* AppDelegate.swift */,
 				C5D4E0BF27656D5700A280A4 /* SceneDelegate.swift */,
-				C5D4E0C127656D5700A280A4 /* ViewController.swift */,
-				C5D4E0C327656D5700A280A4 /* Main.storyboard */,
+				C5D4E0D12765725900A280A4 /* HNTabBarController.swift */,
+				C5D4E0D32765748300A280A4 /* HomeVC.swift */,
+				C5D4E0D5276574B600A280A4 /* SettingsVC.swift */,
 				C5D4E0C627656D5900A280A4 /* Assets.xcassets */,
 				C5D4E0C827656D5900A280A4 /* LaunchScreen.storyboard */,
 				C5D4E0CB27656D5900A280A4 /* Info.plist */,
@@ -127,7 +130,6 @@
 			files = (
 				C5D4E0CA27656D5900A280A4 /* LaunchScreen.storyboard in Resources */,
 				C5D4E0C727656D5900A280A4 /* Assets.xcassets in Resources */,
-				C5D4E0C527656D5700A280A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +140,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5D4E0C227656D5700A280A4 /* ViewController.swift in Sources */,
+				C5D4E0D22765725900A280A4 /* HNTabBarController.swift in Sources */,
+				C5D4E0D42765748300A280A4 /* HomeVC.swift in Sources */,
 				C5D4E0BE27656D5700A280A4 /* AppDelegate.swift in Sources */,
 				C5D4E0C027656D5700A280A4 /* SceneDelegate.swift in Sources */,
+				C5D4E0D6276574B600A280A4 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C5D4E0C327656D5700A280A4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5D4E0C427656D5700A280A4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C5D4E0C827656D5900A280A4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +290,7 @@
 				INFOPLIST_FILE = HackerNews/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +302,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,7 +318,7 @@
 				INFOPLIST_FILE = HackerNews/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +330,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
