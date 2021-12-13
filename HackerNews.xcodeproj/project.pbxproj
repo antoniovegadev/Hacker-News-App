@@ -76,25 +76,105 @@
 		C5D4E0BC27656D5700A280A4 /* HackerNews */ = {
 			isa = PBXGroup;
 			children = (
-				C5D4E0D72765918000A280A4 /* Constants.swift */,
+				C5D4E0EC27670AA300A280A4 /* Utilities */,
+				C5D4E0EB27670A9600A280A4 /* Extensions */,
+				C5D4E0F127670B3D00A280A4 /* Managers */,
+				C5D4E0ED27670ABF00A280A4 /* Model */,
+				C5D4E0F027670B2300A280A4 /* Custom Views */,
+				C5D4E0EF27670B0400A280A4 /* Screens */,
+				C5D4E0EE27670ADB00A280A4 /* Support */,
+			);
+			path = HackerNews;
+			sourceTree = "<group>";
+		};
+		C5D4E0EB27670A9600A280A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				C5D4E0E92766E31800A280A4 /* Date+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C5D4E0EC27670AA300A280A4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4E0D72765918000A280A4 /* Constants.swift */,
 				C5D4E0DF2765BEB900A280A4 /* HNError.swift */,
-				C5D4E0DB2765BA3300A280A4 /* NetworkManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C5D4E0ED27670ABF00A280A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				C5D4E0DD2765BA5400A280A4 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5D4E0EE27670ADB00A280A4 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				C5D4E0BD27656D5700A280A4 /* AppDelegate.swift */,
 				C5D4E0BF27656D5700A280A4 /* SceneDelegate.swift */,
-				C5D4E0D12765725900A280A4 /* HNTabBarController.swift */,
-				C5D4E0D32765748300A280A4 /* HomeVC.swift */,
-				C5D4E0E12765D04C00A280A4 /* HNItemCell.swift */,
-				C5D4E0E72766971A00A280A4 /* HNSymbolTextView.swift */,
-				C5D4E0E32765D20100A280A4 /* HNTitleLabel.swift */,
-				C5D4E0E527668B2200A280A4 /* HNBodyLabel.swift */,
-				C5D4E0D5276574B600A280A4 /* SettingsVC.swift */,
 				C5D4E0C627656D5900A280A4 /* Assets.xcassets */,
 				C5D4E0C827656D5900A280A4 /* LaunchScreen.storyboard */,
 				C5D4E0CB27656D5900A280A4 /* Info.plist */,
 			);
-			path = HackerNews;
+			name = Support;
+			sourceTree = "<group>";
+		};
+		C5D4E0EF27670B0400A280A4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4E0D32765748300A280A4 /* HomeVC.swift */,
+				C5D4E0D5276574B600A280A4 /* SettingsVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C5D4E0F027670B2300A280A4 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4E0D12765725900A280A4 /* HNTabBarController.swift */,
+				C5D4E0F427670B7C00A280A4 /* Cells */,
+				C5D4E0F327670B5400A280A4 /* Views */,
+				C5D4E0F227670B4A00A280A4 /* Labels */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		C5D4E0F127670B3D00A280A4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4E0DB2765BA3300A280A4 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C5D4E0F227670B4A00A280A4 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4E0E32765D20100A280A4 /* HNTitleLabel.swift */,
+				C5D4E0E527668B2200A280A4 /* HNBodyLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		C5D4E0F327670B5400A280A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4E0E72766971A00A280A4 /* HNSymbolTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C5D4E0F427670B7C00A280A4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4E0E12765D04C00A280A4 /* HNItemCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
