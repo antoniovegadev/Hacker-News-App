@@ -20,6 +20,9 @@
 		C5D4E0E02765BEB900A280A4 /* HNError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0DF2765BEB900A280A4 /* HNError.swift */; };
 		C5D4E0E22765D04C00A280A4 /* HNItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E12765D04C00A280A4 /* HNItemCell.swift */; };
 		C5D4E0E42765D20100A280A4 /* HNTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E32765D20100A280A4 /* HNTitleLabel.swift */; };
+		C5D4E0E627668B2200A280A4 /* HNBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E527668B2200A280A4 /* HNBodyLabel.swift */; };
+		C5D4E0E82766971A00A280A4 /* HNSymbolTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E72766971A00A280A4 /* HNSymbolTextView.swift */; };
+		C5D4E0EA2766E31800A280A4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E92766E31800A280A4 /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		C5D4E0DF2765BEB900A280A4 /* HNError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNError.swift; sourceTree = "<group>"; };
 		C5D4E0E12765D04C00A280A4 /* HNItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNItemCell.swift; sourceTree = "<group>"; };
 		C5D4E0E32765D20100A280A4 /* HNTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNTitleLabel.swift; sourceTree = "<group>"; };
+		C5D4E0E527668B2200A280A4 /* HNBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNBodyLabel.swift; sourceTree = "<group>"; };
+		C5D4E0E72766971A00A280A4 /* HNSymbolTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNSymbolTextView.swift; sourceTree = "<group>"; };
+		C5D4E0E92766E31800A280A4 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				C5D4E0D72765918000A280A4 /* Constants.swift */,
+				C5D4E0E92766E31800A280A4 /* Date+Ext.swift */,
 				C5D4E0DF2765BEB900A280A4 /* HNError.swift */,
 				C5D4E0DB2765BA3300A280A4 /* NetworkManager.swift */,
 				C5D4E0DD2765BA5400A280A4 /* Item.swift */,
@@ -79,7 +86,9 @@
 				C5D4E0D12765725900A280A4 /* HNTabBarController.swift */,
 				C5D4E0D32765748300A280A4 /* HomeVC.swift */,
 				C5D4E0E12765D04C00A280A4 /* HNItemCell.swift */,
+				C5D4E0E72766971A00A280A4 /* HNSymbolTextView.swift */,
 				C5D4E0E32765D20100A280A4 /* HNTitleLabel.swift */,
+				C5D4E0E527668B2200A280A4 /* HNBodyLabel.swift */,
 				C5D4E0D5276574B600A280A4 /* SettingsVC.swift */,
 				C5D4E0C627656D5900A280A4 /* Assets.xcassets */,
 				C5D4E0C827656D5900A280A4 /* LaunchScreen.storyboard */,
@@ -158,10 +167,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D4E0E82766971A00A280A4 /* HNSymbolTextView.swift in Sources */,
 				C5D4E0E42765D20100A280A4 /* HNTitleLabel.swift in Sources */,
 				C5D4E0E22765D04C00A280A4 /* HNItemCell.swift in Sources */,
 				C5D4E0D22765725900A280A4 /* HNTabBarController.swift in Sources */,
 				C5D4E0D42765748300A280A4 /* HomeVC.swift in Sources */,
+				C5D4E0EA2766E31800A280A4 /* Date+Ext.swift in Sources */,
+				C5D4E0E627668B2200A280A4 /* HNBodyLabel.swift in Sources */,
 				C5D4E0BE27656D5700A280A4 /* AppDelegate.swift in Sources */,
 				C5D4E0E02765BEB900A280A4 /* HNError.swift in Sources */,
 				C5D4E0DC2765BA3300A280A4 /* NetworkManager.swift in Sources */,

@@ -22,3 +22,9 @@ enum LiveData: String {
     static let showStoriesSFSymbol = UIImage(systemName: "eyes")
     static let jobStoriesSFSymbol = UIImage(systemName: "briefcase")
 }
+
+enum HNSymbols: String {
+    case upArrow = "arrow.up"
+    case textBubble = "text.bubble"
+    case clock = "clock"
+}

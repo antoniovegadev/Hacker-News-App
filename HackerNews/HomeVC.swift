@@ -50,7 +50,8 @@ class HomeVC: UIViewController {
         view.addSubview(tableView)
 
         tableView.frame = view.bounds
-        tableView.rowHeight = 80
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 120
         tableView.delegate = self
         tableView.dataSource = self
 
