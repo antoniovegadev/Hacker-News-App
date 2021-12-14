@@ -23,6 +23,8 @@
 		C5D4E0E627668B2200A280A4 /* HNBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E527668B2200A280A4 /* HNBodyLabel.swift */; };
 		C5D4E0E82766971A00A280A4 /* HNSymbolTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E72766971A00A280A4 /* HNSymbolTextView.swift */; };
 		C5D4E0EA2766E31800A280A4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E92766E31800A280A4 /* Date+Ext.swift */; };
+		C5D4E0F627683E5C00A280A4 /* HNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0F527683E5C00A280A4 /* HNButton.swift */; };
+		C5D4E0F82769164F00A280A4 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0F72769164F00A280A4 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		C5D4E0E527668B2200A280A4 /* HNBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNBodyLabel.swift; sourceTree = "<group>"; };
 		C5D4E0E72766971A00A280A4 /* HNSymbolTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNSymbolTextView.swift; sourceTree = "<group>"; };
 		C5D4E0E92766E31800A280A4 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		C5D4E0F527683E5C00A280A4 /* HNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNButton.swift; sourceTree = "<group>"; };
+		C5D4E0F72769164F00A280A4 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				C5D4E0E92766E31800A280A4 /* Date+Ext.swift */,
+				C5D4E0F72769164F00A280A4 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				C5D4E0F427670B7C00A280A4 /* Cells */,
 				C5D4E0F327670B5400A280A4 /* Views */,
 				C5D4E0F227670B4A00A280A4 /* Labels */,
+				C5D4E0F527683E5C00A280A4 /* HNButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 				C5D4E0DC2765BA3300A280A4 /* NetworkManager.swift in Sources */,
 				C5D4E0DE2765BA5400A280A4 /* Item.swift in Sources */,
 				C5D4E0C027656D5700A280A4 /* SceneDelegate.swift in Sources */,
+				C5D4E0F627683E5C00A280A4 /* HNButton.swift in Sources */,
 				C5D4E0D6276574B600A280A4 /* SettingsVC.swift in Sources */,
+				C5D4E0F82769164F00A280A4 /* String+Ext.swift in Sources */,
 				C5D4E0D82765918100A280A4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

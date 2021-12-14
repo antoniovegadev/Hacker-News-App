@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeVC: UIViewController {
 
@@ -135,8 +136,20 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HNItemCell.reuseID) as! HNItemCell
         let item = items[indexPath.row]
+        cell.delegate = self
         cell.set(item: item)
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
+    }
+}
+
+extension HomeVC: HNItemCellDelegate {
+    func didTapLinkLabel(for item: Item) {
+        guard let urlString = item.url,
+              let url = URL(string: urlString) else { return }
+
+        let safariVC = SFSafariViewController(url: url)
+        safariVC.preferredControlTintColor = .systemOrange
+        present(safariVC, animated: true)
     }
 }

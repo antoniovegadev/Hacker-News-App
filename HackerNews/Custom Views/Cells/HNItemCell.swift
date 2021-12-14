@@ -6,13 +6,21 @@
 //
 
 import UIKit
+import SafariServices
+
+protocol HNItemCellDelegate: AnyObject {
+    func didTapLinkLabel(for item: Item)
+}
 
 class HNItemCell: UITableViewCell {
+    weak var delegate: HNItemCellDelegate!
+    var item: Item!
+
     static let reuseID = "HNItemCell"
 
     let header = UIStackView()
     let rankLabel = HNBodyLabel(fontSize: 12)
-    let linkLabel = HNBodyLabel(fontSize: 12)
+    let linkLabel = HNButton()
     let titleLabel = HNTitleLabel(textAlignment: .left, fontSize: 16)
     let footer = UIStackView()
     let upvoteLabel = HNSymbolTextView(symbol: .upArrow)
@@ -21,7 +29,9 @@ class HNItemCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+
         configure()
+        configureLinkLabel()
         configureHeader()
         configureFooter()
     }
@@ -31,8 +41,9 @@ class HNItemCell: UITableViewCell {
     }
 
     func set(item: Item) {
+        self.item = item
         rankLabel.text = String(item.rank) + "."
-        linkLabel.text = "google.com"
+        linkLabel.set(title: item.url?.strippedURL() ?? "www.google.com")
         titleLabel.text = item.title
         upvoteLabel.set(text: String(item.score!))
         commentLabel.set(text: String(item.descendants ?? 0))
@@ -40,34 +51,35 @@ class HNItemCell: UITableViewCell {
     }
 
     private func configure() {
-        addSubview(header)
-        addSubview(titleLabel)
-        addSubview(footer)
+        contentView.addSubview(header)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(footer)
         let padding: CGFloat = 20
 
         header.translatesAutoresizingMaskIntoConstraints = false
         footer.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            header.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            header.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            header.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            header.topAnchor.constraint(equalTo: contentView.topAnchor),
+            header.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
 
-            titleLabel.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 5),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
+            titleLabel.topAnchor.constraint(equalTo: header.bottomAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40),
 
             footer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
-            footer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            footer.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -14)
+            footer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            footer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -14)
         ])
+    }
+
+    private func configureLinkLabel() {
+        linkLabel.addTarget(self, action: #selector(linkLabelTapped), for: .touchUpInside)
     }
 
     private func configureHeader() {
         header.axis = .horizontal
-        header.spacing = 8
-
-        linkLabel.textColor = .systemOrange
+        header.spacing = 1
         
         header.addArrangedSubview(rankLabel)
         header.addArrangedSubview(linkLabel)
@@ -80,5 +92,9 @@ class HNItemCell: UITableViewCell {
         footer.addArrangedSubview(upvoteLabel)
         footer.addArrangedSubview(commentLabel)
         footer.addArrangedSubview(dateLabel)
+    }
+
+    @objc func linkLabelTapped() {
+        delegate.didTapLinkLabel(for: item)
     }
 }

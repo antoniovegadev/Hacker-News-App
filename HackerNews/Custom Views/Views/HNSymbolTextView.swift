@@ -56,7 +56,7 @@ class HNSymbolTextView: UIView {
             symbol.widthAnchor.constraint(equalToConstant: 14),
 
             label.centerYAnchor.constraint(equalTo: symbol.centerYAnchor),
-            label.leadingAnchor.constraint(equalTo: symbol.trailingAnchor, constant: 5),
+            label.leadingAnchor.constraint(equalTo: symbol.trailingAnchor, constant: 1),
             label.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             label.heightAnchor.constraint(equalToConstant: 14)
         ])
