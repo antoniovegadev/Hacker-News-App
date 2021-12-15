@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SafariServices
 
 protocol HNItemCellDelegate: AnyObject {
     func didTapLinkLabel(for item: Item)

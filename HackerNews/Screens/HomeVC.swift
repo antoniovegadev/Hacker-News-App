@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-class HomeVC: UIViewController {
+class HomeVC: HNDataLoadingVC {
 
     var filterBarButton: UIBarButtonItem!
 
@@ -63,13 +63,17 @@ class HomeVC: UIViewController {
     }
 
     func getItems(for filter: LiveData) {
+        showLoadingView()
+
         Task {
             do {
                 let ids = try await NetworkManager.shared.fetchLiveData(filter: filter)
                 let items = try await NetworkManager.shared.fetchItems(ids: ids)
                 updateUI(with: items)
+                dismissLoadingView()
             } catch {
                 print("There was an error")
+                dismissLoadingView()
             }
         }
     }

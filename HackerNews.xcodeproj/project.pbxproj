@@ -25,6 +25,7 @@
 		C5D4E0EA2766E31800A280A4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0E92766E31800A280A4 /* Date+Ext.swift */; };
 		C5D4E0F627683E5C00A280A4 /* HNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0F527683E5C00A280A4 /* HNButton.swift */; };
 		C5D4E0F82769164F00A280A4 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0F72769164F00A280A4 /* String+Ext.swift */; };
+		C5D4E0FA27696C7400A280A4 /* HNDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4E0F927696C7400A280A4 /* HNDataLoadingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C5D4E0E92766E31800A280A4 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		C5D4E0F527683E5C00A280A4 /* HNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNButton.swift; sourceTree = "<group>"; };
 		C5D4E0F72769164F00A280A4 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		C5D4E0F927696C7400A280A4 /* HNDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNDataLoadingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				C5D4E0F327670B5400A280A4 /* Views */,
 				C5D4E0F227670B4A00A280A4 /* Labels */,
 				C5D4E0F527683E5C00A280A4 /* HNButton.swift */,
+				C5D4E0F927696C7400A280A4 /* HNDataLoadingVC.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				C5D4E0E82766971A00A280A4 /* HNSymbolTextView.swift in Sources */,
 				C5D4E0E42765D20100A280A4 /* HNTitleLabel.swift in Sources */,
 				C5D4E0E22765D04C00A280A4 /* HNItemCell.swift in Sources */,
+				C5D4E0FA27696C7400A280A4 /* HNDataLoadingVC.swift in Sources */,
 				C5D4E0D22765725900A280A4 /* HNTabBarController.swift in Sources */,
 				C5D4E0D42765748300A280A4 /* HomeVC.swift in Sources */,
 				C5D4E0EA2766E31800A280A4 /* Date+Ext.swift in Sources */,
