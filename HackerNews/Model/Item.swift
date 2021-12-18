@@ -30,6 +30,7 @@ struct Item: Codable {
 
     var wrappedDead: Bool { dead ?? false }
     var wrappedDeleted: Bool { deleted ?? false }
+    var wrappedDescendants: Int { descendants ?? 0 }
 
     enum CodingKeys: CodingKey {
         case id

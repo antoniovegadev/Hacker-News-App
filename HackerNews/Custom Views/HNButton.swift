@@ -30,6 +30,8 @@ class HNButton: UIButton {
         attr.foregroundColor = .systemOrange
 
         config.attributedTitle = AttributedString(title, attributes: attr)
+        config.contentInsets = .init(top: 5, leading: 0, bottom: 5, trailing: 0)
+        config.titleAlignment = .leading
         self.configuration = config
     }
 }

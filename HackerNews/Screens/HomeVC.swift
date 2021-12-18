@@ -38,12 +38,22 @@ class HomeVC: HNDataLoadingVC {
         getItems(for: .topstories)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
+        }
+    }
+
     func configure() {
         view.backgroundColor = .systemBackground
 
         navigationController?.navigationBar.tintColor = .systemOrange
         navigationController?.navigationBar.prefersLargeTitles = true
+
         navigationItem.rightBarButtonItem = filterBarButton
+        navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Top Stories"
     }
 
@@ -144,6 +154,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.set(item: item)
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let itemDetailVC = ItemDetailVC()
+        let item = items[indexPath.row]
+
+        itemDetailVC.item = item
+        navigationController?.pushViewController(itemDetailVC, animated: true)
     }
 }
 

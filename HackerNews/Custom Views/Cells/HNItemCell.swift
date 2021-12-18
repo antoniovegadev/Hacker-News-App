@@ -45,7 +45,7 @@ class HNItemCell: UITableViewCell {
         linkLabel.set(title: item.url?.strippedURL() ?? "www.google.com")
         titleLabel.text = item.title
         upvoteLabel.set(text: String(item.score!))
-        commentLabel.set(text: String(item.descendants ?? 0))
+        commentLabel.set(text: String(item.wrappedDescendants))
         dateLabel.set(text: item.time.relativeStringDate())
     }
 
@@ -78,7 +78,7 @@ class HNItemCell: UITableViewCell {
 
     private func configureHeader() {
         header.axis = .horizontal
-        header.spacing = 1
+        header.spacing = 5
         
         header.addArrangedSubview(rankLabel)
         header.addArrangedSubview(linkLabel)
