@@ -21,6 +21,7 @@ class HNItemCell: UITableViewCell {
     let rankLabel = HNBodyLabel(fontSize: 12)
     let linkLabel = HNButton()
     let titleLabel = HNTitleLabel(textAlignment: .left, fontSize: 16)
+    let authorLabel = HNBodyLabel(fontSize: 12)
     let footer = UIStackView()
     let upvoteLabel = HNSymbolTextView(symbol: .upArrow)
     let commentLabel = HNSymbolTextView(symbol: .textBubble)
@@ -44,6 +45,7 @@ class HNItemCell: UITableViewCell {
         rankLabel.text = String(item.rank) + "."
         linkLabel.set(title: item.url?.strippedURL() ?? "www.google.com")
         titleLabel.text = item.title
+        authorLabel.text = item.by
         upvoteLabel.set(text: String(item.score!))
         commentLabel.set(text: String(item.wrappedDescendants))
         dateLabel.set(text: item.time.relativeStringDate())
@@ -52,6 +54,7 @@ class HNItemCell: UITableViewCell {
     private func configure() {
         contentView.addSubview(header)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(authorLabel)
         contentView.addSubview(footer)
         let padding: CGFloat = 20
 
@@ -66,7 +69,10 @@ class HNItemCell: UITableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40),
 
-            footer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
+            authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+
+            footer.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 15),
             footer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
             footer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -14)
         ])
