@@ -27,4 +27,5 @@ enum HNSymbols: String {
     case upArrow = "arrow.up"
     case textBubble = "text.bubble"
     case clock = "clock"
+    case person = "person.crop.circle"
 }

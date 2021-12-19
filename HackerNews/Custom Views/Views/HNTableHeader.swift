@@ -13,10 +13,16 @@ class HNTableHeader: UIView {
     let titleLabel = HNTitleLabel(textAlignment: .left, fontSize: 16)
     let linkButton = HNButton()
 
+    let hStack = UIStackView()
+    let upvoteLabel = HNSymbolTextView(symbol: .upArrow)
+    let author = HNSymbolTextView(symbol: .person)
+    let dateLabel = HNSymbolTextView(symbol: .clock)
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         configure()
+        configureHStack()
         configureVStack()
         layoutUI()
     }
@@ -30,6 +36,9 @@ class HNTableHeader: UIView {
 
         titleLabel.text = item.title
         linkButton.set(title: item.url?.strippedURL() ?? "google.com")
+        upvoteLabel.set(text: String(item.score!))
+        author.set(text: item.by)
+        dateLabel.set(text: item.time.relativeStringDate())
     }
 
     private func configure() {
@@ -39,21 +48,35 @@ class HNTableHeader: UIView {
     private func configureVStack() {
         vStack.axis = .vertical
         vStack.alignment = .leading
-        vStack.spacing = 5
+        vStack.spacing = 10
 
         vStack.addArrangedSubview(titleLabel)
         vStack.addArrangedSubview(linkButton)
+        vStack.addArrangedSubview(hStack)
+    }
+
+    private func configureHStack() {
+        hStack.axis = .horizontal
+        hStack.spacing = 8
+
+        hStack.addArrangedSubview(upvoteLabel)
+        hStack.addArrangedSubview(author)
+        hStack.addArrangedSubview(dateLabel)
     }
 
     private func layoutUI() {
         vStack.translatesAutoresizingMaskIntoConstraints = false
-        let padding: CGFloat = 20
+        hStack.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalPadding: CGFloat = 20
+        let verticalPadding: CGFloat = 10
 
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
-            vStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            vStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
-            vStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding)
+            vStack.topAnchor.constraint(equalTo: self.topAnchor, constant: verticalPadding),
+            vStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: horizontalPadding),
+            vStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -horizontalPadding),
+            vStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -verticalPadding),
+
+            hStack.heightAnchor.constraint(equalToConstant: 16)
         ])
     }
 }
