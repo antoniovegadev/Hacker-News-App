@@ -15,7 +15,7 @@ extension Int {
         case 1_000...:
             var formatted = num / 1_000
             formatted = formatted.reduceScale(to: 1)
-            return "\(formatted)K"
+            return "\(formatted)k Comments"
 
         case 0...:
             return "\(self) " + (self == 1 ? "Comment" : "Comments")

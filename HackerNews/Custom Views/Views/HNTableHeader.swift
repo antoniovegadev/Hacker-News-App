@@ -67,7 +67,7 @@ class HNTableHeader: UIView {
     private func layoutUI() {
         vStack.translatesAutoresizingMaskIntoConstraints = false
         hStack.translatesAutoresizingMaskIntoConstraints = false
-        let horizontalPadding: CGFloat = 20
+        let horizontalPadding: CGFloat = 15
         let verticalPadding: CGFloat = 10
 
         NSLayoutConstraint.activate([
