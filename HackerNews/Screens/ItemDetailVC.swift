@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import SwiftSoup
 
 class ItemDetailVC: HNDataLoadingVC {
 
@@ -21,6 +22,22 @@ class ItemDetailVC: HNDataLoadingVC {
         configure()
         configureTableView()
         getComments()
+
+        do {
+            let html: String = "<p>An <a href='https://youtube.com/'><b>example</b></a> link.</p>"
+            let doc: Document = try SwiftSoup.parse(html)
+            let link: Element = try doc.select("a").first()!
+
+            let text: String = try doc.body()!.text()
+            let linkHref: String = try link.attr("href")
+            let linkText: String = try link.text()
+
+            print(text, linkHref, linkText, separator: " | ")
+        } catch Exception.Error(_, let message) {
+            print(message)
+        } catch {
+            print("error")
+        }
     }
 
     override func viewDidLayoutSubviews() {
