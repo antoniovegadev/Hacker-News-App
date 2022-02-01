@@ -29,7 +29,7 @@ class HNCommentCell: UITableViewCell {
         authorButton.set(title: item.by)
         dateLabel.text = item.time.relativeStringDate()
 
-        commentTextLabel.text = item.text?.parseHTML()
+        commentTextLabel.attributedText = item.text?.attributedString()
         commentTextLabel.textColor = .label
     }
 
