@@ -1,8 +1,9 @@
 # Hacker-News-App
-A mobile client for Hacker News
+A mobile client for Hacker News built with the open-source [Hacker News API](https://github.com/HackerNews/API)
 
-![home screen](/Images/home.png)
+<p align="middle">
+  <img src="/Images/home.png" width="30.33%" />
+  <img src="/Images/comments.png" width="30.33%" /> 
+  <img src="/Images/filter-menu.png" width="30.33%" />
+</p>
 
-![commemts screen](/Images/comments.png)
-
-![filter-menu screen](/Images/filter-menu.png)
