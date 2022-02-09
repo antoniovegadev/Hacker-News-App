@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class HNCommentCell: UITableViewCell {
 
@@ -37,6 +38,16 @@ class HNCommentCell: UITableViewCell {
         contentView.addSubview(authorButton)
         contentView.addSubview(dateLabel)
         contentView.addSubview(commentTextLabel)
+
+        self.isSkeletonable = true
+        contentView.isSkeletonable = true
+        authorButton.isSkeletonable = true
+        authorButton.skeletonCornerRadius = 5
+
+        commentTextLabel.isSkeletonable = true
+        commentTextLabel.skeletonTextNumberOfLines = 5
+        commentTextLabel.linesCornerRadius = 5
+        commentTextLabel.lastLineFillPercent = 40
 
         authorButton.translatesAutoresizingMaskIntoConstraints = false
 

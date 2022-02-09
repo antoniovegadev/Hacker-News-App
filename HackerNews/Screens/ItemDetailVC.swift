@@ -8,8 +8,9 @@
 import UIKit
 import SafariServices
 import SwiftSoup
+import SkeletonView
 
-class ItemDetailVC: HNDataLoadingVC {
+class ItemDetailVC: UIViewController {
 
     var item: Item!
 
@@ -20,24 +21,11 @@ class ItemDetailVC: HNDataLoadingVC {
         super.viewDidLoad()
 
         configure()
+
+        tableView.isSkeletonable = true
+
         configureTableView()
         getComments()
-
-        do {
-            let html: String = "<p>An <a href='https://youtube.com/'><b>example</b></a> link.</p>"
-            let doc: Document = try SwiftSoup.parse(html)
-            let link: Element = try doc.select("a").first()!
-
-            let text: String = try doc.body()!.text()
-            let linkHref: String = try link.attr("href")
-            let linkText: String = try link.text()
-
-            print(text, linkHref, linkText, separator: " | ")
-        } catch Exception.Error(_, let message) {
-            print(message)
-        } catch {
-            print("error")
-        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -59,16 +47,18 @@ class ItemDetailVC: HNDataLoadingVC {
     func getComments() {
         guard let ids = item.kids else { return }
 
-        showLoadingView()
+        tableView.showAnimatedGradientSkeleton()
 
         Task {
             do {
                 let items = try await NetworkManager.shared.fetchItems(ids: ids)
                 updateUI(with: items)
-                dismissLoadingView()
+                tableView.stopSkeletonAnimation()
+                view.hideSkeleton()
             } catch {
                 print("There was an error")
-                dismissLoadingView()
+                tableView.stopSkeletonAnimation()
+                view.hideSkeleton()
             }
         }
     }
@@ -94,7 +84,7 @@ class ItemDetailVC: HNDataLoadingVC {
         tableView.dataSource = self
         tableView.frame = view.bounds
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 150
 
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
@@ -104,9 +94,13 @@ class ItemDetailVC: HNDataLoadingVC {
     }
 }
 
-extension ItemDetailVC: UITableViewDataSource, UITableViewDelegate {
+extension ItemDetailVC: SkeletonTableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
+    }
+
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return HNCommentCell.reuseID
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

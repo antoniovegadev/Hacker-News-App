@@ -7,5 +7,6 @@ target 'HackerNews' do
 
   # Pods for HackerNews
   pod 'SwiftSoup'
+  pod 'SkeletonView'
 
 end

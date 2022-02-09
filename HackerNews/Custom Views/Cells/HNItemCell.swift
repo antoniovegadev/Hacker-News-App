@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 protocol HNItemCellDelegate: AnyObject {
     func didTapLinkLabel(for item: Item)
@@ -56,6 +57,22 @@ class HNItemCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(authorLabel)
         contentView.addSubview(footer)
+
+        self.isSkeletonable = true
+        contentView.isSkeletonable = true
+        header.isSkeletonable = true
+        header.isHiddenWhenSkeletonIsActive = true
+        
+        titleLabel.isSkeletonable = true
+        titleLabel.skeletonTextNumberOfLines = 4
+        titleLabel.linesCornerRadius = 5
+
+        authorLabel.isSkeletonable = true
+        authorLabel.isHiddenWhenSkeletonIsActive = true
+
+        footer.isSkeletonable = true
+        footer.isHiddenWhenSkeletonIsActive = true
+
         let padding: CGFloat = 20
 
         header.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +84,7 @@ class HNItemCell: UITableViewCell {
 
             titleLabel.topAnchor.constraint(equalTo: header.bottomAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
 
             authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),

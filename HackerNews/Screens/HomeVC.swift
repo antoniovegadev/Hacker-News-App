@@ -7,8 +7,9 @@
 
 import UIKit
 import SafariServices
+import SkeletonView
 
-class HomeVC: HNDataLoadingVC {
+class HomeVC: UIViewController {
 
     var filterBarButton: UIBarButtonItem!
 
@@ -35,6 +36,9 @@ class HomeVC: HNDataLoadingVC {
 
         configure()
         configureTableView()
+
+        tableView.isSkeletonable = true
+
         getItems(for: .topstories)
     }
 
@@ -62,7 +66,7 @@ class HomeVC: HNDataLoadingVC {
 
         tableView.frame = view.bounds
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 150
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -73,17 +77,19 @@ class HomeVC: HNDataLoadingVC {
     }
 
     func getItems(for filter: LiveData) {
-        showLoadingView()
+        tableView.showAnimatedGradientSkeleton()
 
         Task {
             do {
                 let ids = try await NetworkManager.shared.fetchLiveData(filter: filter)
                 let items = try await NetworkManager.shared.fetchItems(ids: ids)
                 updateUI(with: items)
-                dismissLoadingView()
+                tableView.stopSkeletonAnimation()
+                view.hideSkeleton()
             } catch {
                 print("There was an error")
-                dismissLoadingView()
+                tableView.stopSkeletonAnimation()
+                view.hideSkeleton()
             }
         }
     }
@@ -142,9 +148,13 @@ class HomeVC: HNDataLoadingVC {
 }
 
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+extension HomeVC: UITableViewDelegate, SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
+    }
+
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return HNItemCell.reuseID
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

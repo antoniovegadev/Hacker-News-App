@@ -1,16 +1,20 @@
 PODS:
+  - SkeletonView (1.29.2)
   - SwiftSoup (2.3.3)
 
 DEPENDENCIES:
+  - SkeletonView
   - SwiftSoup
 
 SPEC REPOS:
   trunk:
+    - SkeletonView
     - SwiftSoup
 
 SPEC CHECKSUMS:
+  SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SwiftSoup: 8e4844e785a975744f2c2606f8b3844ef67eb259
 
-PODFILE CHECKSUM: 1abb7d503e80d171d92a1a0a89c0eb610d9b2752
+PODFILE CHECKSUM: 1ee18d8e21e877ffa299b204429f295899191a13
 
 COCOAPODS: 1.11.2
