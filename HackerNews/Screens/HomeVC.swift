@@ -177,7 +177,7 @@ extension HomeVC: UITableViewDelegate, SkeletonTableViewDataSource {
 
 extension HomeVC: HNItemCellDelegate {
     func didTapLinkLabel(for item: Item) {
-        guard let urlString = item.url,
+        guard let urlString = item.urlString,
               let url = URL(string: urlString) else { return }
 
         let safariVC = SFSafariViewController(url: url)

@@ -44,12 +44,12 @@ class HNItemCell: UITableViewCell {
     func set(item: Item) {
         self.item = item
         rankLabel.text = String(item.rank) + "."
-        linkLabel.set(title: item.url?.strippedURL() ?? "www.google.com")
+        linkLabel.set(title: item.urlString?.strippedURL() ?? "www.google.com")
         titleLabel.text = item.title
-        authorLabel.text = item.by
+        authorLabel.text = item.author
         upvoteLabel.set(text: String(item.score!))
-        commentLabel.set(text: String(item.wrappedDescendants))
-        dateLabel.set(text: item.time.relativeStringDate())
+        commentLabel.set(text: String(item.wrappedCommentCount))
+        dateLabel.set(text: item.dateCreated.relativeStringDate())
     }
 
     private func configure() {

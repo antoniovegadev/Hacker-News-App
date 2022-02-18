@@ -35,10 +35,10 @@ class HNTableHeader: UIView {
         self.init(frame: .zero)
 
         titleLabel.text = item.title
-        linkButton.set(title: item.url?.strippedURL() ?? "google.com")
+        linkButton.set(title: item.urlString?.strippedURL() ?? "google.com")
         upvoteLabel.set(text: String(item.score!))
-        author.set(text: item.by)
-        dateLabel.set(text: item.time.relativeStringDate())
+        author.set(text: item.author)
+        dateLabel.set(text: item.dateCreated.relativeStringDate())
     }
 
     private func configure() {

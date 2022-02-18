@@ -74,7 +74,7 @@ class ItemDetailVC: UIViewController {
         view.backgroundColor = .systemBackground
 
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.title = item.wrappedDescendants.toStringCommentCount()
+        navigationItem.title = item.wrappedCommentCount.toStringCommentCount()
     }
 
     private func configureTableView() {

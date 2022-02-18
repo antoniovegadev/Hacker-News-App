@@ -27,8 +27,8 @@ class HNCommentCell: UITableViewCell {
     }
 
     func set(item: Item) {
-        authorButton.set(title: item.by)
-        dateLabel.text = item.time.relativeStringDate()
+        authorButton.set(title: item.author)
+        dateLabel.text = item.dateCreated.relativeStringDate()
 
         commentTextLabel.attributedText = item.text?.attributedString()
         commentTextLabel.textColor = .label
