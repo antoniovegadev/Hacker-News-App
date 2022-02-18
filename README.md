@@ -7,3 +7,6 @@ A mobile client for Hacker News built with the open-source [Hacker News API](htt
   <img src="/Images/filter-menu.png" width="30.33%" />
 </p>
 
+## CocoaPods
+- [SwiftSoup](https://github.com/scinfu/SwiftSoup)
+- [SkeletonView](https://github.com/Juanpe/SkeletonView)
