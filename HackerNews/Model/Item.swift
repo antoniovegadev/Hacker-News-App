@@ -40,6 +40,8 @@ struct Item: Codable {
     let commentCount: Int?
 
     var rank = -1
+
+    var children: [Item]? = nil
 }
 
 extension Item {

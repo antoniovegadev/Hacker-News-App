@@ -44,6 +44,24 @@ class ItemDetailVC: UIViewController {
         }
     }
 
+    func getChildrenComments(for comment: inout Item) async -> [Item]? {
+        do {
+            guard let commentIds = comment.kids else { return nil }
+            var comments = try await NetworkManager.shared.fetchItems(ids: commentIds)
+
+            for i in 0..<comments.count {
+                comments[i].children = await getChildrenComments(for: &comments[i])
+            }
+
+            comment.children = comments
+
+            return comments
+        } catch {
+            print("Recursive - Fetching comments failed.")
+            return nil
+        }
+    }
+
     func getComments() {
         guard let ids = item.kids else { return }
 
@@ -51,8 +69,15 @@ class ItemDetailVC: UIViewController {
 
         Task {
             do {
-                let items = try await NetworkManager.shared.fetchItems(ids: ids)
-                updateUI(with: items)
+                print("Fetching comments for item \(item.id)")
+                var items = try await NetworkManager.shared.fetchItems(ids: ids)
+                for i in 0..<items.count {
+                    items[i].children = await getChildrenComments(for: &items[i])
+                }
+                self.item.children = items
+                var comments = [Item]()
+                flattenChildren(for: self.item, array: &comments)
+                updateUI(with: comments)
                 tableView.stopSkeletonAnimation()
                 view.hideSkeleton()
             } catch {
@@ -91,6 +116,16 @@ class ItemDetailVC: UIViewController {
 
         tableView.tableHeaderView = HNTableHeader(item: item)
         tableView.register(HNCommentCell.self, forCellReuseIdentifier: HNCommentCell.reuseID)
+    }
+
+    func flattenChildren(for item: Item, array: inout [Item]) {
+        if item.type == "comment" {
+            array.append(item)
+        }
+
+        for child in item.children ?? [] {
+            flattenChildren(for: child, array: &array)
+        }
     }
 }
 

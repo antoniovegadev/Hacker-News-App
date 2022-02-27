@@ -27,6 +27,8 @@ class HNCommentCell: UITableViewCell {
     }
 
     func set(item: Item) {
+        indentationLevel = 10
+        indentationWidth = 10.0
         authorButton.set(title: item.author)
         dateLabel.text = item.dateCreated.relativeStringDate()
 
