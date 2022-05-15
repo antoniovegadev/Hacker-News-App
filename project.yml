@@ -1,0 +1,10 @@
+name: HackerNews
+options:
+  bundleIdPrefix: dev.antoniovega
+targets:
+  HackerNews:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.3"
+    sources:
+      - HackerNews
