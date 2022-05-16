@@ -1,6 +1,16 @@
 name: HackerNews
 options:
   bundleIdPrefix: dev.antoniovega
+packages:
+  Swinject:
+    url: https://github.com/Swinject/Swinject.git
+    majorVersion: 2.8.0
+  Quick:
+    url: https://github.com/Quick/Quick.git 
+    majorVersion: 5.0.1
+  Nimble:
+    url: https://github.com/Quick/Nimble.git
+    majorVersion: 10.0.0
 targets:
   HackerNews:
     type: application
@@ -8,3 +18,14 @@ targets:
     deploymentTarget: "13.3"
     sources:
       - HackerNews
+    dependencies:
+      - package: Swinject
+  HackerNewsTest:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - HackerNewsTests
+    dependencies:
+      - package: Swinject
+      - package: Quick
+      - package: Nimble 
